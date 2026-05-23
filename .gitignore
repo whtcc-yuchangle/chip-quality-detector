@@ -1,0 +1,6 @@
+.idea/
+.claude/
+out1/
+out2/
+__pycache__/
+*.pyc
