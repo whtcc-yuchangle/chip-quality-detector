@@ -34,8 +34,8 @@ This program is a **real-time chip quality detection tool** based on the YOLO ob
 ## 四、文件结构 | File Structure
 
 ```
-chip_detect/
-├── chip_best.pt          # 训练好的 YOLO 模型 | Trained YOLO model
+chip-quality-detector/
+├── chip.pt               # 训练好的 YOLO 模型 | Trained YOLO model
 └── detect_test_3.py      # 实时检测程序 | Real-time detection program
 ```
 
@@ -53,7 +53,7 @@ import cv2                    # 图像处理与视频捕获库
 ### 5.2 初始化模型和摄像头 | Initialize Model & Camera
 
 ```python
-model = YOLO("chip_best.pt")   # 加载训练好的模型
+model = YOLO("chip.pt")   # 加载训练好的模型
 cap = cv2.VideoCapture(0)      # 打开默认摄像头（0 或 1 可调）
 ```
 
@@ -129,7 +129,7 @@ pip install ultralytics opencv-python
 ### 6.2 运行程序 | Run Program
 
 ```bash
-cd /home/uw/桌面/chip_detect
+cd chip-quality-detector
 python detect_test_3.py
 ```
 

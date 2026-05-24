@@ -37,8 +37,8 @@ This program is a **batch chip quality detection tool** based on the YOLO object
 ## 四、文件结构 | File Structure
 
 ```
-chip_detect/
-├── chip_best.pt          # 训练好的 YOLO 模型 | Trained YOLO model
+chip-quality-detector/
+├── chip.pt               # 训练好的 YOLO 模型 | Trained YOLO model
 ├── datasets/             # 待检测图片目录 | Image folder to detect
 │   ├── chip1.png
 │   ├── chip2.png
@@ -65,7 +65,7 @@ import os                     # 文件系统操作
 ### 5.2 配置参数 | Configuration
 
 ```python
-model = YOLO("chip_best.pt")   # 加载模型
+model = YOLO("chip.pt")   # 加载模型
 input_folder = "datasets"      # 输入图片文件夹
 output_dir = "out2"            # 输出结果文件夹
 ```
@@ -156,7 +156,7 @@ pip install ultralytics opencv-python
 ### 6.2 运行程序 | Run Program
 
 ```bash
-cd /home/uw/桌面/chip_detect
+cd chip-quality-detector
 python detect_test_2.py
 ```
 

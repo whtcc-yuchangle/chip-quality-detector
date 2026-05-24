@@ -35,13 +35,13 @@ This program is a chip quality detection tool based on the YOLO object detection
 ## 四、文件结构 | File Structure
 
 ```
-chip_detect/
-├── chip_best.pt          # 训练好的YOLO模型文件 | Trained YOLO model
+chip-quality-detector/
+├── chip.pt               # 训练好的YOLO模型文件 | Trained YOLO model
 ├── datasets/
 │   └── chip1.png         # 待检测的芯片图片 | Image to detect
 ├── detect_test_1.py      # 主程序文件 | Main program file
-└── out/                  # 结果输出目录 | Output directory (auto-created)
-    └── result.png        # 检测结果图片 | Detection result
+└── out1/                 # 结果输出目录 | Output directory (auto-created)
+    └── chip1.png         # 检测结果图片 | Detection result
 ```
 
 ---
@@ -59,9 +59,9 @@ import os                     # 文件系统操作
 ### 5.2 核心配置 | Core Configuration
 
 ```python
-model = YOLO("chip_best.pt")    # 加载训练好的芯片检测模型
+model = YOLO("chip.pt")    # 加载训练好的芯片检测模型
 image_path = "datasets/chip1.png" # 待检测图片路径
-output_dir = "out"              # 结果保存目录
+output_dir = "out1"             # 结果保存目录
 ```
 
 ### 5.3 目录创建 | Create Output Directory
@@ -128,7 +128,7 @@ cv2.putText(img, f"Bad: {bad_count}", (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,
 ### 5.8 保存与显示结果 | Save & Display Result
 
 ```python
-cv2.imwrite(f"{output_dir}/result.png", img)  # 保存结果图片
+cv2.imwrite(f"{output_dir}/{filename}", img)  # 保存结果图片
 cv2.imshow("Chip Detection Result", img)      # 显示图片窗口
 cv2.waitKey(0)                                # 等待按键关闭
 cv2.destroyAllWindows()                       # 关闭窗口
@@ -140,7 +140,7 @@ cv2.destroyAllWindows()                       # 关闭窗口
 print("检测完成！| Detection completed!")
 print(f"好芯片：{good_count} | Good chips: {good_count}")
 print(f"坏芯片：{bad_count} | Bad chips: {bad_count}")
-print(f"结果已保存至 out/result.png")
+print(f"结果已保存至 out1/ | Result saved to out1/")
 ```
 
 ---
@@ -156,7 +156,7 @@ pip install ultralytics opencv-python
 ### 6.2 运行程序 | Run Program
 
 ```bash
-cd /home/uw/桌面/chip_detect
+cd chip-quality-detector
 python detect_test_1.py
 ```
 
@@ -165,7 +165,7 @@ python detect_test_1.py
 1. 程序运行后会自动加载模型并检测图片
 2. 检测完成后会弹出显示窗口，显示检测结果
 3. 按键盘任意键关闭显示窗口
-4. 检测结果图片保存在 `out/result.png`
+4. 检测结果图片保存在 `out1/` 目录 | Result image saved in `out1/` directory
 
 ---
 
@@ -184,7 +184,7 @@ python detect_test_1.py
 检测完成！| Detection completed!
 好芯片：5 | Good chips: 5
 坏芯片：2 | Bad chips: 2
-结果已保存至 out/result.png
+结果已保存至 out1/ | Result saved to out1/
 ```
 
 ---
@@ -202,7 +202,7 @@ python detect_test_1.py
 
 **Q: 运行时提示模型文件找不到？**
 
-A: 确保 `chip_best.pt` 文件位于程序运行目录下。
+A: 确保 `chip.pt` 文件位于程序运行目录下。
 
 **Q: 检测结果不准确？**
 
