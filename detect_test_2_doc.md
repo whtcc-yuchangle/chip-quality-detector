@@ -352,7 +352,25 @@ Typical console output after processing 20 test images in `datasets/`:
 
 ---
 
-## 十、学习要点 | 10. Key Learning Points
+## 十、配套学习脚本 | 10. Companion Study Scripts
+
+本程序对应一组逐步深入的学习脚本，每一版在前一版基础上新增一个功能点：
+This program has a companion set of progressive study scripts, each adding one feature on top of the previous:
+
+| 脚本 Script | 新增功能 New Feature | 说明 Description |
+|------------|---------------------|-----------------|
+| `detect_study_2_01th.py` | 批量图片读取与显示 | 遍历 `datasets/` 所有图片并逐一显示 | Read and display all images from `datasets/` |
+| `detect_study_2_02th.py` | + YOLO 目标检测 | 加入模型推理、绘制检测框和类别标签 | Add YOLO inference, bounding boxes, and class labels |
+| `detect_study_2_03th.py` | + 单图统计 | 加入每张图片的 good/bad 计数器及左上角统计显示 | Add per-image good/bad counters and on-screen statistics |
+| `detect_study_2_04th.py` | + 全局汇总 | 加入全局计数器及控制台汇总报告 | Add global counters and console summary report |
+| `detect_study_2_05th.py` | + 结果保存 | 加入输出目录创建及图片保存，功能与 `detect_test_2.py` 完全一致 | Add output directory creation and image saving, feature-complete with `detect_test_2.py` |
+
+建议学习顺序：从 `detect_study_2_01th.py` 开始，逐版运行对比变化，最后阅读 `detect_test_2.py` 完整版代码。
+Recommended learning order: start from `detect_study_2_01th.py`, run each version to compare changes, then read the complete `detect_test_2.py` code.
+
+---
+
+## 十一、学习要点 | 11. Key Learning Points
 
 对于马来西亚学生，建议重点理解以下编程概念：
 For Malaysian students, we recommend focusing on the following programming concepts:
