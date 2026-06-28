@@ -5,9 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview | 项目概述
 
-Chip quality detection using YOLO (ultralytics) and OpenCV. The trained model (`chip.pt`) classifies chips as **good** or **bad**. Three scripts cover single-image, batch, and real-time webcam detection.
+Chip quality detection using YOLO (ultralytics) and OpenCV. The trained model (`chip.pt`) classifies chips as **good** or **bad**. Three scripts cover single-image, batch, and real-time webcam detection. The `Training/` directory contains model training materials for both chip detection and screw size detection scenarios.
 
-使用 YOLO (ultralytics) 和 OpenCV 进行芯片质量检测。训练好的模型 (`chip.pt`) 将芯片分类为 **good**（好芯片）或 **bad**（坏芯片）。三个脚本分别覆盖单图片检测、批量检测和实时摄像头检测。
+使用 YOLO (ultralytics) 和 OpenCV 进行芯片质量检测。训练好的模型 (`chip.pt`) 将芯片分类为 **good**（好芯片）或 **bad**（坏芯片）。三个脚本分别覆盖单图片检测、批量检测和实时摄像头检测。`Training/` 目录包含芯片检测和螺丝尺寸检测两个场景的模型训练素材。
 
 ## Commands | 常用命令
 
@@ -69,3 +69,7 @@ Two series of progressive study scripts break down single-image and batch detect
 - `datasets/` — 20 test images (`chip1.png` through `chip20.png`) | 20 张测试图片
 - `detect_study_01th.py` ~ `detect_study_04th.py` — Progressive single-image study scripts | 单图片检测逐步学习脚本
 - `detect_study_2_01th.py` ~ `detect_study_2_05th.py` — Progressive batch-detection study scripts | 批量检测逐步学习脚本
+- `Training/` — Model training materials: step-by-step screenshots, datasets, trained models, and a training tutorial PPTX | 模型训练素材：分步截图、数据集、训练模型及训练教程PPT
+  - `Training/CHIP_DETECT/` — Chip detection training materials (model, dataset, photos) | 芯片检测训练素材（模型、数据集、采集照片）
+  - `Training/SCREW_DETECT/` — Screw size detection training materials (model, dataset) | 螺丝尺寸检测训练素材（模型、数据集）
+  - `Training/芯片检测模型训练 Chip Detection Model Training.pptx` — Training tutorial slides | 训练教程PPT
